@@ -1,21 +1,16 @@
-###BACH-SixthSense
+#BACH-SixthSense
 
-#QUICK START
-  To score a set of .pdb structures:
-  - make a text file containing the relative (with respect to the executable) or absolute path 
-    of each .pdb file you want to score. Put just one path per line
-  - Type
-   
-    <FOLDERPATH>/BSS.x -COMPUTE_ENE -PDBLIST <listname>
-
-    where <listname> is the relative (with respect to the executable) or absolute path of the 
-    list file you created
+###QUICK START
+To score a set of .pdb structures:
+  *make a text file containing the relative (with respect to the executable) or absolute path of each .pdb file you want to score. Put just one path per line
+  *Type
+```<FOLDERPATH>/BSS.x -COMPUTE_ENE -PDBLIST <listname>``` where <listname> is the relative (with respect to the executable) or absolute path of the list file you created
   - in the standard output the scoring of the structures will be printed ("ENERGY" rows). 
     Warnings about the structure and .pdb format will be printed as well ("WARNING" rows). 
     An output file output.bss with only the "ENERGY" rows will be created
 
 
-#OPTIONS
+###OPTIONS
   mandatory
   -COMPUTE\_ENE   computes the score of the structures in the structure list file
      <xor>
@@ -36,7 +31,7 @@
 By browsing the code you can find that other options are implemented. We are still testing them.
 
 
-#EXAMPLES WALKTHROUGH
+###EXAMPLES WALKTHROUGH
 1)  A CASP (monomer) decoy set and a CAPRI (dimer) decoy sets are reported as an example.
     You can find the already generated structures list files in the lists/ folder.
     To run the program over these decoy sets, just go in the executable folder and type
@@ -80,7 +75,7 @@ By browsing the code you can find that other options are implemented. We are sti
   paste  my\_CAPRI\_cut\_n.bss my\_CAPRI\_cut\_d.bss | awk 'NR>1' | awk 'BEGIN{n=0} $8<\$4 {n++} END {print "RANK (absolute, normalized, \# of structures): ",n+1,(n+1)/(NR+1),NR+1}'
 
 
-#FURTHER INSTRUCTIONS
+###FURTHER INSTRUCTIONS
   Moving the executable to another folder
     If you want to change the location of the executable, just remember to move ATOMIC_PARAMETERS_BSS
     and BSS.par files in the same folder. You can use -FILE_PAR option to specify an alternative
