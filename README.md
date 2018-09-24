@@ -1,10 +1,13 @@
-#BACH-SixthSense
+# BACH-SixthSense
 
-###QUICK START
+### QUICK START
 To score a set of .pdb structures:
-  *make a text file containing the relative (with respect to the executable) or absolute path of each .pdb file you want to score. Put just one path per line
-  *Type
-```<FOLDERPATH>/BSS.x -COMPUTE_ENE -PDBLIST <listname>``` where <listname> is the relative (with respect to the executable) or absolute path of the list file you created
+  * make a text file containing the relative (with respect to the executable) or absolute path of each .pdb file you want to score. Put just one path per line
+  * Type
+```
+<FOLDERPATH>/BSS.x -COMPUTE_ENE -PDBLIST <listname>
+``` 
+where <listname> is the relative (with respect to the executable) or absolute path of the list file you created
   - in the standard output the scoring of the structures will be printed ("ENERGY" rows). 
     Warnings about the structure and .pdb format will be printed as well ("WARNING" rows). 
     An output file output.bss with only the "ENERGY" rows will be created
